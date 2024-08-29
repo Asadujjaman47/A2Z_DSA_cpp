@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Quick Sort
 int partition(vector<int> &arr, int low, int high)
 {
     int pivot = arr[low];

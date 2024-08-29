@@ -1,1 +1,4 @@
-Hi asad
+Before Using Bubble Sort: 
+13 46 24 52 20 9 
+After Using Bubble Sort: 
+9 13 20 24 46 52 
