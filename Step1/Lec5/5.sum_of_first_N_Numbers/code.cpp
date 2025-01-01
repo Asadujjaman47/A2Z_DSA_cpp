@@ -1,3 +1,5 @@
+// Sum of first N numbers
+
 // Solution1: Using Loop
 #include<bits/stdc++.h>
 using namespace std;

@@ -1,3 +1,5 @@
+// Find the highest/lowest frequency element
+
 // Approach: Brute-Force approach(Using two loops)
 
 #include<bits/stdc++.h>

@@ -1,3 +1,5 @@
+// Find the highest/lowest frequency element
+
 // Optimized approach(Using map)
 
 #include <bits/stdc++.h>

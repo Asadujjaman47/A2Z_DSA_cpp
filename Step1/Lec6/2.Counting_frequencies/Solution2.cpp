@@ -1,3 +1,6 @@
+// Count frequency of each element in the array
+
+
 // Solution 2: Using Map
 
 #include<bits/stdc++.h>

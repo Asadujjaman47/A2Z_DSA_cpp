@@ -1,3 +1,5 @@
+// Print all Divisors of a given Number
+
 #include<bits/stdc++.h>
 using namespace std;
 

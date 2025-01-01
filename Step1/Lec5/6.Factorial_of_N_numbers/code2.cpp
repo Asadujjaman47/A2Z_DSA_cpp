@@ -1,3 +1,5 @@
+// Factorial of N numbers
+
 // Solution 2: Recursive
 #include<bits/stdc++.h>
 using namespace std;

@@ -1,3 +1,6 @@
+// Sum of first N numbers
+
+
 // Solution 2: Using the formula
 #include<bits/stdc++.h>
 using namespace std;

@@ -1,3 +1,5 @@
+// Factorial of N numbers
+
 // Solution 1: Iterative
 #include<bits/stdc++.h>
 using namespace std;

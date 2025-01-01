@@ -1,3 +1,5 @@
+// Check if a number is Armstrong Number or not
+
 #include<bits/stdc++.h>
 using namespace std;
 

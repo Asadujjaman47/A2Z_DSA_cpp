@@ -1,3 +1,5 @@
+// Count frequency of each element in the array
+
 // Solution 1: Use of two loops
 
 #include<bits/stdc++.h>
