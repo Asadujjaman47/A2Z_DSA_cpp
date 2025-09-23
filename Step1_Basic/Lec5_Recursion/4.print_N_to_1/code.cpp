@@ -3,8 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void fun(int n)
-{
+void fun(int n) {
 
     // Base Condtion
     if (n < 1)
@@ -15,13 +14,12 @@ void fun(int n)
     fun(n - 1);
 }
 
-int main()
-{
+int main() {
 
     int n;
     cin >> n;
     fun(n);
 }
 
-// TC: O(N)
-// SC: O(N)
+// Time Complexity: O(N)
+// Space Complexity: O(N)

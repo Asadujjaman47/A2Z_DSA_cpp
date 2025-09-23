@@ -1,4 +1,29 @@
-// Count Maximum Consecutive One's in the array
+/*
+Count Maximum Consecutive One's in the array
+
+Mark as Completed
+
+488
+
+
+Problem Statement: Given an array that contains only 1 and 0 return the count of maximum consecutive ones in the array.
+
+Examples:
+
+Example 1:
+
+Input: prices = {1, 1, 0, 1, 1, 1}
+
+Output: 3
+
+Explanation: There are two consecutive 1’s and three consecutive 1’s in the array out of which maximum is 3.
+
+Input: prices = {1, 0, 1, 1, 0, 1} 
+
+Output: 2
+
+Explanation: There are two consecutive 1's in the array. 
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -7,18 +32,14 @@ class Solution
 {
 
 public:
-    int findMaxConsecutiveOnes(vector<int> &nums)
-    {
+    int findMaxConsecutiveOnes(vector<int> &nums) {
         int cnt = 0;
         int maxi = 0;
-        for (int i = 0; i < nums.size(); i++)
-        {
-            if (nums[i] == 1)
-            {
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] == 1) {
                 cnt++;
             }
-            else
-            {
+            else {
                 cnt = 0;
             }
 
@@ -29,8 +50,7 @@ public:
     }
 };
 
-int main()
-{
+int main() {
     vector<int> nums = {1, 1, 0, 1, 1, 1};
     Solution obj;
     int ans = obj.findMaxConsecutiveOnes(nums);
@@ -38,6 +58,5 @@ int main()
     return 0;
 }
 
-// Time Complexity: O(N) since the solution involves only a single pass.
-
-// Space Complexity: O(1) because no extra space is used.
+// Time Complexity: O(N)
+// Space Complexity: O(1)

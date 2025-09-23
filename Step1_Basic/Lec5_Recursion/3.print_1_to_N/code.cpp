@@ -3,8 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void func(int i, int n)
-{
+void func(int i, int n) {
 
     // Base Condition.
     if (i > n)
@@ -16,8 +15,7 @@ void func(int i, int n)
     func(i + 1, n);
 }
 
-int main()
-{
+int main() {
     int n;
     cin >> n;
     func(1, n);

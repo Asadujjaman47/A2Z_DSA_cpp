@@ -28,7 +28,7 @@ Examples
                 Common Factors: 1, 5 out of which 5 is the greatest hence it is the GCD.
                 
 
-Brute Force Approach:
+Better Approach:
 */
 
 #include <iostream>
@@ -37,24 +37,25 @@ Brute Force Approach:
 using namespace std;
 
 int findGcd(int n1, int n2) {
-    // Initialize gcd to 1
-    int gcd = 1;
+    // Iterate from the minimum of
+    // n1 and n2 down to 1
+    // Start from the minimum of n1 and n2
+    // because the GCD cannot
+    // exceed the smaller number
 
-    // Iterate from 1 up to
-    // the minimum of n1 and n2
-    for (int i = 1; i <= min(n1, n2); i++) {
+    for (int i = min(n1, n2); i > 0; i--) {
         // Check if i is a common
         // factor of both n1 and n2
         if (n1 % i == 0 && n2 % i == 0) {
-            // Update gcd to the
-            // current common factor i
-            gcd = i;
+            // If i is a common factor,
+            // return it as the GCD
+            return i;
         }
     }
-
-    // Return the greatest
-    // common divisor (gcd)
-    return gcd;
+    // If no common factors are found,
+    // return 1 (as 1 is always a
+    // divisor of any number)
+    return 1;
 }
 // Time Complexity: O(min(N1, N2))
 // Space Complexity: O(1)

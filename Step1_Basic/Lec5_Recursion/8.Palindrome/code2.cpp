@@ -1,10 +1,28 @@
-// Check if a string is palindrome or not
+/*
+Check if the given String is Palindrome or not
+
+Problem Statement: "Given a string, check if the string is palindrome or not."  A string is said to be palindrome if the reverse of the string is the same as the string.
+
+Examples:
+
+Example 1:
+Input: Str =  “ABCDCBA”
+Output: Palindrome
+Explanation: String when reversed is the same as string.
+
+Example 2:
+Input: Str = “TAKE U FORWARD”
+Output: Not Palindrome
+Explanation: String when reversed is not the same as string.
+
+Recursive Approach:
+*/
+
 
 #include <bits/stdc++.h>
 using namespace std;
 
-bool palindrome(int i, string &s)
-{
+bool palindrome(int i, string &s) {
 
     // Base Condition
     // If i exceeds half of the string means all the elements
@@ -20,13 +38,12 @@ bool palindrome(int i, string &s)
     return palindrome(i + 1, s);
 }
 
-int main()
-{
+int main() {
 
     string s = "madam";
     cout << palindrome(0, s) << "\n";
     return 0;
 }
 
-// TC: O(N)
-// SC: O(1)
+// Time Complexity: O(N) 
+// Space Complexity: O(1) 

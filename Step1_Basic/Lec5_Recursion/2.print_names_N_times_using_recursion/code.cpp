@@ -3,8 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void func(int i, int n)
-{
+void func(int i, int n) {
 
     // Base Condition.
     if (i > n)
@@ -15,8 +14,7 @@ void func(int i, int n)
     func(i + 1, n);
 }
 
-int main()
-{
+int main() {
 
     // Here, let’s take the value of n to be 4.
     int n;
@@ -24,3 +22,6 @@ int main()
     func(1, n);
     return 0;
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(N)

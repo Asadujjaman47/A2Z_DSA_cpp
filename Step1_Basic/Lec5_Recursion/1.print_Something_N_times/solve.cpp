@@ -4,8 +4,7 @@
 using namespace std;
 int cnt = 0;
 
-void print()
-{
+void print() {
 
     // Base Condition
     if (cnt == 3)
@@ -17,8 +16,7 @@ void print()
     print();
 }
 
-int main()
-{
+int main() {
     print();
     return 0;
 }

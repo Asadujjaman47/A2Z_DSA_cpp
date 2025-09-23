@@ -1,11 +1,32 @@
+/*
+Check if a number is Armstrong Number or not
+
+Problem Statement: Given an integer N, return true it is an Armstrong number otherwise return false.
+
+An Amrstrong number is a number that is equal to the sum of its own digits each raised to the power of the number of digits.
+
+Examples
+                Example 1:
+                Input:N = 153
+               
+                Output:True
+                
+                Explanation: 13+53+33 = 1 + 125 + 27 = 153
+                                        
+                Example 2:
+                Input:N = 371                
+                
+                Output: True
+                
+                Explanation: 33+53+13 = 27 + 343 + 1 = 371
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
 
 // Function to check if a
 // number is an Armstrong number
-bool isArmstrong(int num)
-{
+bool isArmstrong(int num) {
     // Calculate the number of
     // digits in the given number
     int k = to_string(num).length();
@@ -17,8 +38,7 @@ bool isArmstrong(int num)
     int n = num;
     // Iterate through each
     // digit of the number
-    while (n > 0)
-    {
+    while (n > 0) {
         // Extract the last
         // digit of the number
         int ld = n % 10;
@@ -36,15 +56,12 @@ bool isArmstrong(int num)
 // Time Complexity: O(log10N + 1)
 // Space Complexity: O(1)
 
-int main()
-{
+int main() {
     int number = 153;
-    if (isArmstrong(number))
-    {
+    if (isArmstrong(number)) {
         cout << number << " is an Armstrong number." << endl;
     }
-    else
-    {
+    else {
         cout << number << " is not an Armstrong number." << endl;
     }
     return 0;

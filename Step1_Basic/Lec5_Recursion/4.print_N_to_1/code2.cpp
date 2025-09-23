@@ -3,8 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void func(int i, int n)
-{
+void func(int i, int n) {
 
     // Base Case
     if (i > n)
@@ -14,10 +13,12 @@ void func(int i, int n)
     cout << i << endl;
 }
 
-int main()
-{
+int main() {
     int n;
     cin >> n;
 
     func(1, n);
 }
+
+// Time Complexity: O(N)
+// Space Complexity: O(N) 
