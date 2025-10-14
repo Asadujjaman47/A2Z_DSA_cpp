@@ -1,0 +1,62 @@
+/*
+Find the missing number in an array
+
+Problem Statement: Given an integer N and an array of size N-1 containing N-1 numbers between 1 to N. Find the number(between 1 to N), that is not present in the given array.
+
+Examples
+
+Example 1:
+Input Format: N = 5, array[] = {1,2,4,5}
+Result: 3
+Explanation: In the given array, number 3 is missing. So, 3 is the answer.
+
+Example 2:
+Input Format: N = 3, array[] = {1,3}
+Result: 2
+Explanation: In the given array, number 2 is missing. So, 2 is the answer.
+
+Naive Approach(Brute-force approach):
+*/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int missingNumber(vector<int> &a, int N) {
+
+    // Outer loop that runs from 1 to N
+    for (int i = 1; i <= N; i++) {
+
+        // flag variable to check
+        // if an element exists
+        int flag = 0;
+
+        // Search the element using linear search 
+        for (int j = 0; j < N-1; j++) {
+            if (a[j] == i) {
+
+                // i is present in the array 
+                flag = 1;
+                break;
+            }
+        }
+
+        // check if the element is missing
+        // i.e flag = 0;
+
+        if (flag == 0) return i;
+    }
+
+    // The following line will never execute
+    // It is just to avoid warnings.
+    return -1;
+}
+// Time Complexity: O(N2)
+// Space Complexity: O(1) 
+
+int main() {
+    int N = 5;
+    vector<int> a = {1, 2, 4, 5};
+    int ans = missingNumber(a, N);
+    cout << "The missing number is: " << ans << endl;
+    return 0;
+}
