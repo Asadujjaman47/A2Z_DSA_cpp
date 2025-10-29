@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile and Run DSA Program (Root IO)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-c",
+        "cd \"${fileDirname}\" && g++ \"${file}\" -std=c++20 -O2 -Wall -o \"${fileBasenameNoExtension}\" && ./\"${fileBasenameNoExtension}\" < \"${workspaceFolder}/input.txt\" > \"${workspaceFolder}/output.txt\" && rm \"${fileBasenameNoExtension}\""
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
