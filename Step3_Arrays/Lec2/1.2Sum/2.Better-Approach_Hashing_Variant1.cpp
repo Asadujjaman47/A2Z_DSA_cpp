@@ -1,7 +1,8 @@
+/*
+
 // Two Sum : Check if a pair with given sum exists in Array
 // Better Approach(using Hashing)
 // Code Variant 1:
-/*
 Example 1:
 Input Format: N = 5, arr[] = {2,6,5,8,11}, target = 14
 Result: YES (for 1st variant)

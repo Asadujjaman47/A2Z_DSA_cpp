@@ -1,7 +1,8 @@
-// Two Sum : Check if a pair with given sum exists in Array
-// Naive Approach(Brute-force approach): 
-// Code Variant 1:
 /**
+
+Two Sum : Check if a pair with given sum exists in Array
+Naive Approach(Brute-force approach): 
+Code Variant 1:
 
 Example 1:
 Input Format: N = 5, arr[] = {2,6,5,8,11}, target = 14
@@ -42,5 +43,5 @@ int main() {
     return 0;
 }
 
-// Time Complexity: O(N2),
+// Time Complexity: O(N2)
 // Space Complexity: O(1)

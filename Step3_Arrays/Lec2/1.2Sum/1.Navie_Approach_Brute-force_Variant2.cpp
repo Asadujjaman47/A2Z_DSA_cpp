@@ -1,7 +1,7 @@
+/*
 // Two Sum : Check if a pair with given sum exists in Array
 // Naive Approach(Brute-force approach): 
 // Code Variant 2:
-/*
 Example 1:
 Input Format: N = 5, arr[] = {2,6,5,8,11}, target = 14
 Result: YES (for 1st variant)
