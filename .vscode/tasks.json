@@ -2,12 +2,12 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Compile and Run DSA Program (Root IO)",
+      "label": "Compile and Run DSA Program (Linux)",
       "type": "shell",
-      "command": "cmd.exe",
+      "command": "bash",
       "args": [
-        "/c",
-        "pushd \"${fileDirname}\" && g++ \"${file}\" -std=c++20 -O2 -Wall -o \"${fileBasenameNoExtension}.exe\" && \"${fileBasenameNoExtension}.exe\" < \"${workspaceFolder}\\input.txt\" > \"${workspaceFolder}\\output.txt\" && del \"${fileBasenameNoExtension}.exe\" && popd"
+        "-c",
+        "g++ \"${file}\" -std=c++20 -O2 -Wall -o \"${fileDirname}/${fileBasenameNoExtension}\" && if [ -f \"${workspaceFolder}/input.txt\" ]; then \"${fileDirname}/${fileBasenameNoExtension}\" < \"${workspaceFolder}/input.txt\" > \"${workspaceFolder}/output.txt\"; else \"${fileDirname}/${fileBasenameNoExtension}\"; fi; rm -f \"${fileDirname}/${fileBasenameNoExtension}\""
       ],
       "presentation": {
         "reveal": "always",
@@ -17,7 +17,9 @@
         "kind": "build",
         "isDefault": true
       },
-      "problemMatcher": ["$gcc"]
+      "problemMatcher": [
+        "$gcc"
+      ]
     }
   ]
 }
