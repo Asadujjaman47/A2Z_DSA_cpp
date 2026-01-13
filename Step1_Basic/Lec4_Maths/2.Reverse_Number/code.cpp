@@ -3,7 +3,8 @@ Reverse Digits of A Number
 
 Problem Statement: Given an integer N return the reverse of the given number.
 
-Note: If a number has trailing zeros, then its reverse will not include them. For e.g., reverse of 10400 will be 401 instead of 00401.
+Note: If a number has trailing zeros, then its reverse will not include them. 
+For e.g., reverse of 10400 will be 401 instead of 00401.
 
 Examples
                 Example 1:
@@ -24,31 +25,38 @@ Examples
 #include <iostream>
 using namespace std;
 
+class Solution {
+public:
+    // Function to reverse digits of a number
+    int reverseNumber(int n) {
+        // Variable to store reversed number
+        int revNum = 0;
+
+        // Loop until all digits are processed
+        while (n > 0) {
+            // Get the last digit
+            int lastDigit = n % 10;
+
+            // Append it to the reversed number
+            revNum = revNum * 10 + lastDigit;
+
+            // Remove the last digit from n
+            n = n / 10;
+        }
+
+        // Return the reversed number
+        return revNum;
+    }
+};
+
+// Driver code
 int main() {
-	// Declare a variable 'n' to
-	// store the input integer.
-	int n;
-	// Prompt the user to enter an
-	// integer and store it in 'n'.
-	cin >> n;
-	// Initialize a variable 'revNum' to
-	// store the reverse of the input integer.
-	int revNum = 0;
-	// Start a while loop to reverse the
-	// digits of the input integer.
-	while (n > 0) {
-		// Extract the last digit of
-		// 'n' and store it in 'ld'.
-		int ld = n % 10;
-		// Multiply the current reverse number
-		// by 10 and add the last digit.
-		revNum = (revNum * 10) + ld;
-		// Remove the last digit from 'n'.
-		n = n / 10;
-	}
-	// Print the reversed number.
-	cout << revNum;
+    Solution obj;
+    int num = 12345;
+    cout << obj.reverseNumber(num) << endl;  // Output: 54321
+    return 0;
 }
 
-// Time Complexity: O(log10N + 1)
+
+// Time Complexity: O(log10N)
 // Space Complexity: O(1)

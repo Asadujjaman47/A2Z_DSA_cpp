@@ -25,25 +25,39 @@ For Rotating the Elements to left
 using namespace std;
 
 void Rotatetoleft(int arr[], int n, int k) {
+    // Edge case: empty array, nothing to rotate
     if (n == 0)
         return;
+
+    // Reduce k to handle rotations greater than array size
     k = k % n;
+
+    // Safety check (optional after modulo)
     if (k > n)
         return;
 
     int temp[k];
+
+    // 1️⃣ Store the first k elements in a temporary array
+    // These elements will be moved to the end after rotation
+    // Example: arr = [1 2 3 4 5], k = 2 → temp = [1 2]
     for (int i = 0; i < k; i++) {
         temp[i] = arr[i];
     }
 
+    // 2️⃣ Shift the remaining elements to the left by k positions
+    // Example: [1 2 3 4 5] → [3 4 5 _ _]
     for (int i = 0; i < n - k; i++) {
         arr[i] = arr[i + k];
     }
 
+    // 3️⃣ Copy the stored elements from temp to the end of the array
+    // This completes the left rotation
     for (int i = n - k; i < n; i++) {
         arr[i] = temp[i - n + k];
     }
 }
+
 
 // Time Complexity: O(n)
 // Space Complexity: O(k)

@@ -22,65 +22,44 @@ Optimal Approach:
 */
 
 #include <bits/stdc++.h>
-#include <iostream>
 using namespace std;
 
-// Function to check if a
-// given number is prime.
-bool checkPrime(int n)
-{
+// Function to check if a given number is prime
+bool checkPrime(int n) {
+    int cnt = 0;  // Initialize a counter variable to count the number of factors
 
-    // Initialize a counter variable to
-    // count the number of factors.
-    int cnt = 0;
-
-    // Loop through numbers from 1
-    // to the square root of n.
+    // Loop through numbers from 1 to the square root of n
     for (int i = 1; i <= sqrt(n); i++) {
-
-        // If n is divisible by i
-        // without any remainder.
         if (n % i == 0) {
+            cnt++;  // If n is divisible by i, increment the counter
 
-            // Increment the counter.
-            cnt = cnt + 1;
-
-            // If n is not a perfect square,
-            // count its reciprocal factor.
-            if (n / i != i)
-            {
-                cnt = cnt + 1;
+            // If n is not a perfect square, count its reciprocal factor
+            if (n / i != i) {
+                cnt++;
             }
         }
     }
 
-    // If the number of
-    // factors is exactly 2.
+    // If the number of factors is exactly 2 (1 and the number itself), it's prime
     if (cnt == 2) {
-        // Return true, indicating
-        // that the number is prime.
         return true;
-    }
-    // If the number of
-    // factors is not 2.
-    else {
-        // Return false, indicating
-        // that the number is not prime.
-        return false;
+    } else {
+        return false;  // If not, it's not a prime number
     }
 }
-// Time Complexity: O(sqrt(N))
-// Space Complexity : O(1)
 
 int main() {
-    int n = 1483;
-    bool isPrime = checkPrime(n);
+    int n = 1483;  // Example number
+    bool isPrime = checkPrime(n);  // Function call to check if the number is prime
+
     if (isPrime) {
         cout << n << " is a prime number." << endl;
-    }
-    else {
+    } else {
         cout << n << " is not a prime number." << endl;
     }
 
     return 0;
 }
+
+// Time Complexity: O(sqrt(N))
+// Space Complexity : O(1)

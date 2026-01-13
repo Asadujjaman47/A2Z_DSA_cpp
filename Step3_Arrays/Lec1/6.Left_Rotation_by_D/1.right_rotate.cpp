@@ -25,21 +25,35 @@ Approach 1: Using a temp array
 using namespace std;
 
 void Rotatetoright(int arr[], int n, int k) {
+    // Edge case: empty array, nothing to rotate
     if (n == 0)
         return;
+
+    // Reduce k to avoid unnecessary full rotations
     k = k % n;
+
+    // Safety check (optional after modulo, kept for clarity)
     if (k > n)
         return;
 
     int temp[k];
+
+    // 1️⃣ Copy the last k elements of the array into a temporary buffer
+    // These elements will wrap around to the front after rotation
+    // Example: arr = [1 2 3 4 5], k = 2 → temp = [4 5]
     for (int i = n - k; i < n; i++) {
         temp[i - n + k] = arr[i];
     }
 
+    // 2️⃣ Shift the remaining elements to the right by k positions
+    // Start from the end to avoid overwriting values that are still needed
+    // Example: [1 2 3 _ _] → [_ _ 1 2 3]
     for (int i = n - k - 1; i >= 0; i--) {
         arr[i + k] = arr[i];
     }
 
+    // 3️⃣ Copy the saved elements from temp back to the front of the array
+    // This completes the right rotation
     for (int i = 0; i < k; i++) {
         arr[i] = temp[i];
     }

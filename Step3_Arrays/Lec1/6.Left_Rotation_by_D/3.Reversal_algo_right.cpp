@@ -1,8 +1,6 @@
 /*
 Rotate array by K elements
 
-Rotate array by K elements
-
 Problem Statement: Given an array of integers, rotating array of elements by k elements either left or right.
 
 Examples:
