@@ -1,24 +1,49 @@
-// Alternate Approach for printing integers from N to 1 (using Backtracking)
+/*
+Print N to 1 using Recursion
+
+Problem Description: Given an integer N, 
+write a program to print numbers from N to 1.
+
+Examples
+    Input: N = 4
+    Output: 4, 3, 2, 1
+    Explanation: All the numbers from 4 to 1 are printed.
+
+    Input: N = 1
+    Output: 1 
+    Explanation: This is the base case.
+
+Backtracking
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
 
-void func(int i, int n) {
+class Solution {
+public:
+    // Recursive function to print numbers from current down to 1 using backtracking
+    void printNumbers(int current) {
+        // Base case: if current is less than 1, stop recursion
+        if (current < 1)
+            return;
 
-    // Base Case
-    if (i > n)
-        return;
+        // Recursive call with previous number
+        printNumbers(current - 1);
 
-    func(i + 1, n);
-    cout << i << endl;
-}
+        // Print current number during backtracking
+        cout << current << " ";
+    }
+};
 
 int main() {
-    int n;
-    cin >> n;
+    Solution sol;
+    int n = 10;
 
-    func(1, n);
+    sol.printNumbers(n);
+    cout << "\n";
+
+    return 0;
 }
 
 // Time Complexity: O(N)
-// Space Complexity: O(N) 
+// Space Complexity: O(N)

@@ -1,25 +1,50 @@
-// Problem: Print from N to 1 using Recursion
+/*
+Print N to 1 using Recursion
+
+Problem Description: Given an integer N, 
+write a program to print numbers from N to 1.
+
+Examples
+    Input: N = 4
+    Output: 4, 3, 2, 1
+    Explanation: All the numbers from 4 to 1 are printed.
+
+    Input: N = 1
+    Output: 1 
+    Explanation: This is the base case.
+
+Forward Recursion
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
 
-void fun(int n) {
+class Solution {
+public:
+    // Recursive function to print numbers from current down to 1
+    void printNumbers(int current) {
+        // Base case: if current is less than 1, stop recursion
+        if (current < 1)
+            return;
 
-    // Base Condtion
-    if (n < 1)
-        return;
-    cout << n << endl;
+        // Print current number
+        cout << current << " ";
 
-    // Function call to print i till i decrements to 1
-    fun(n - 1);
-}
+        // Recursive call with next smaller number
+        printNumbers(current - 1);
+    }
+};
 
 int main() {
+    Solution sol;
+    int n = 10;
 
-    int n;
-    cin >> n;
-    fun(n);
+    sol.printNumbers(n);
+    cout << "\n";
+
+    return 0;
 }
+
 
 // Time Complexity: O(N)
 // Space Complexity: O(N)

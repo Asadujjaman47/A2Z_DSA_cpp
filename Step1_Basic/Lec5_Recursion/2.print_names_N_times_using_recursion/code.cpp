@@ -1,25 +1,45 @@
-// Print name N times using recursion
+/*
+Print Name N times using Recursion
+
+Problem Description: Given an integer N, 
+write a program to print your name N times.
+
+Examples
+    Input: N = 3
+    Output: Asad Asad Asad 
+    Explanation: Name is printed 3 times.
+
+    Input: N = 1
+    Output: Asad 
+    Explanation: Name is printed once.
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
 
-void func(int i, int n) {
+class Solution {
+public:
+    // Recursive function to print name count times
+    void printName(string name, int count, int N) {
+        // Base case: if count equals N, stop recursion
+        if (count == N)
+            return;
 
-    // Base Condition.
-    if (i > n)
-        return;
-    cout << "Asad\n";
+        // Print the name
+        cout << name << "\n";
 
-    // Function call to print till i increments.
-    func(i + 1, n);
-}
+        // Recursive call with incremented count
+        printName(name, count + 1, N);
+    }
+};
 
 int main() {
+    Solution sol;
+    int N = 5;
+    string name = "Asad";
 
-    // Here, let’s take the value of n to be 4.
-    int n;
-    cin >> n;
-    func(1, n);
+    sol.printName(name, 0, N);
+
     return 0;
 }
 
